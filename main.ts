@@ -5,10 +5,10 @@ class WaveGenerator {
     private analyser: AnalyserNode = null
     private mediaStream: MediaStream = null
     private source: MediaStreamAudioSourceNode = null
-    public windowWidth: number = window.innerWidth - 10
-    public windowHeight: number = window.innerHeight - 100
     private frequencyData: Uint8Array = null
     private colorScale: ScaleLinear<number, number>
+    private readonly windowWidth: number = window.innerWidth - 10
+    private readonly windowHeight: number = window.innerHeight - 100
     private readonly frequencyBinCount = 128
     private readonly maxStdAmplitude = 16
     private xScaler: ScaleLinear<number, number>

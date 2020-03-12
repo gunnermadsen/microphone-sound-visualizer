@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "01653503b7fcd19ad370";
+/******/ 	var hotCurrentHash = "afc29fd49cf254a17be2";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -878,9 +878,9 @@ class WaveGenerator {
         this.analyser = null;
         this.mediaStream = null;
         this.source = null;
+        this.frequencyData = null;
         this.windowWidth = window.innerWidth - 10;
         this.windowHeight = window.innerHeight - 100;
-        this.frequencyData = null;
         this.frequencyBinCount = 128;
         this.maxStdAmplitude = 16;
         this.isListening = false;
