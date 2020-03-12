@@ -1,4 +1,4 @@
-import { scaleLinear, select, easeLinear, ScaleLinear, } from 'd3'
+import { scaleLinear, select, easeLinear, ScaleLinear, scaleSequential, interpolateYlGnBu, extent, } from 'd3'
 import './main.css'
 class WaveGenerator {
     private audioContext: AudioContext = null
@@ -72,12 +72,12 @@ class WaveGenerator {
         this.frequencyData = new Uint8Array(this.analyser.frequencyBinCount)
         this.analyser.getByteFrequencyData(this.frequencyData)
 
-        // setup the color scale function for adding style to the graph
+        // setup the color scale function for adding color styles to the graph
         this.colorScale = scaleLinear()
             .domain([0, 150])
-            .range((["purple", "red", "green"]) as any)
+            .range((["purple", "red", "blue"]) as any)
 
-        // this.colorScale = d3.scaleSequential(d3.interpolateYlGnBu).domain(d3.extent(this.frequencyData, (d: any) => d.value))
+        // this.colorScale = scaleSequential(interpolateYlGnBu).domain(extent(this.frequencyData, (d: any) => d.value))
 
         // initialize the svg element and append it to the DOM
         this.svg = select('#wave-container').append('svg')

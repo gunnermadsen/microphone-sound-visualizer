@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "afc29fd49cf254a17be2";
+/******/ 	var hotCurrentHash = "4b753e79c6ca87179042";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -923,11 +923,11 @@ class WaveGenerator {
         // create a typed array from the analyser frequency data
         this.frequencyData = new Uint8Array(this.analyser.frequencyBinCount);
         this.analyser.getByteFrequencyData(this.frequencyData);
-        // setup the color scale function for adding style to the graph
+        // setup the color scale function for adding color styles to the graph
         this.colorScale = d3_1.scaleLinear()
             .domain([0, 150])
-            .range((["purple", "red", "green"]));
-        // this.colorScale = d3.scaleSequential(d3.interpolateYlGnBu).domain(d3.extent(this.frequencyData, (d: any) => d.value))
+            .range((["purple", "red", "blue"]));
+        // this.colorScale = scaleSequential(interpolateYlGnBu).domain(extent(this.frequencyData, (d: any) => d.value))
         // initialize the svg element and append it to the DOM
         this.svg = d3_1.select('#wave-container').append('svg')
             .attr('width', this.windowWidth)
