@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "819d77a21b3d15ef099e";
+/******/ 	var hotCurrentHash = "01653503b7fcd19ad370";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -884,6 +884,7 @@ class WaveGenerator {
         this.frequencyBinCount = 128;
         this.maxStdAmplitude = 16;
         this.isListening = false;
+        // create linear scale functions used for calculating the radius on the x and y axes, width, and the height
         this.xScaler = d3_1.scaleLinear().domain([0, this.frequencyBinCount - 1]).range([0, 200]);
         this.yScaler = d3_1.scaleLinear().domain([0, this.maxStdAmplitude]).range([185, 0]);
         this.setMicrophoneAudioToContext();
@@ -932,7 +933,7 @@ class WaveGenerator {
             .attr('width', this.windowWidth)
             .attr('height', 250)
             .classed('graph__outline', true);
-        // setup the width of the graph using the x and y scaler function declared above
+        // setup the width of the graph using the x and y scaler functions declared above
         const w = this.xScaler(1) - this.xScaler(0);
         // define the radius on the x axis
         const rx = w * 0.1;

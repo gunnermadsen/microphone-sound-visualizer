@@ -21,8 +21,10 @@ class WaveGenerator {
         // - setup the audio context using the microphone
         // - setup an event listener on the '#start-waves' button 
 
+        // create linear scale functions used for calculating the radius on the x and y axes, width, and the height
         this.xScaler = scaleLinear().domain([0, this.frequencyBinCount - 1]).range([0, 200])
         this.yScaler = scaleLinear().domain([0, this.maxStdAmplitude]).range([185, 0])
+
         this.setMicrophoneAudioToContext()
         document.getElementById('start-waves').addEventListener('click', this.initializeAudioContext.bind(this))
     }
@@ -83,7 +85,7 @@ class WaveGenerator {
             .attr('height', 250)
             .classed('graph__outline', true)
 
-        // setup the width of the graph using the x and y scaler function declared above
+        // setup the width of the graph using the x and y scaler functions declared above
         const w = this.xScaler(1) - this.xScaler(0)
 
         // define the radius on the x axis
