@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "53a74445cfe5d1a8b370";
+/******/ 	var hotCurrentHash = "69a850606937307b42d0";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -936,14 +936,6 @@ class WaveGenerator {
             .attr('width', this.windowWidth)
             .attr('height', 250)
             .classed('graph__outline', true);
-        // .call(
-        //     d3.axisLeft(this.yScaler)
-        //         .ticks(30)
-        //         .tickSize(-this.windowWidth / 1.1)
-        //         .tickFormat(
-        //             d3.format("" as any)
-        //         )
-        // )
         const w = this.xScaler(1) - this.xScaler(0);
         const rx = w * 0.1;
         // logic for rectangles

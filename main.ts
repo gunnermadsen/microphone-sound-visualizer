@@ -80,15 +80,6 @@ class WaveGenerator {
             .attr('width', this.windowWidth)
             .attr('height', 250)
             .classed('graph__outline', true)
-            // .call(
-            //     d3.axisLeft(this.yScaler)
-            //         .ticks(30)
-            //         .tickSize(-this.windowWidth / 1.1)
-
-            //         .tickFormat(
-            //             d3.format("" as any)
-            //         )
-            // )
 
         const w = this.xScaler(1) - this.xScaler(0)
         const rx = w * 0.1
